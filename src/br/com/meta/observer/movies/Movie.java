@@ -8,16 +8,16 @@ public class Movie {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		final Agent doorman = new Agent();
-		doorman.add(new Cameraman());
-		doorman.add(new Actor());
+		final Agent agent = new Agent();
+		agent.addObserver(new Cameraman());
+		agent.addObserver(new Actor());
 
 		for(int i=0;i<5;i++){
 			if(i == 4) {
-				doorman.setStatus(true);
+				agent.setStatus(true);
 				return;
 			}else{
-				doorman.setStatus(false);
+				agent.setStatus(false);
 				Thread.sleep(5000);
 			}
 		}

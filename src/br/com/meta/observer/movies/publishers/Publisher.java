@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Publisher {
-	private List<Observer> observers = new ArrayList<>();
+	private final List<Observer> observers = new ArrayList<>();
 
-	public void add(final Observer observer) {
+	public void addObserver(final Observer observer) {
 		observers.add(observer);
 		System.out.println("Subscriber: "+ observer.getClass().getName()+" inscrito.");
 	}
